@@ -2,7 +2,6 @@ package com.lpa.spring5recipeapp.converters;
 
 import com.lpa.spring5recipeapp.commands.IngredientCommand;
 import com.lpa.spring5recipeapp.domain.Ingredient;
-import com.lpa.spring5recipeapp.domain.Recipe;
 import com.lpa.spring5recipeapp.domain.UnitOfMeasure;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,7 +11,6 @@ import java.math.BigDecimal;
 import static org.junit.Assert.*;
 
 public class IngredientToIngredientCommandTest {
-    private static final Recipe RECIPE = new Recipe();
     private static final BigDecimal AMOUNT = new BigDecimal("1");
     private static final String DESCRIPTION = "Cheeseburger";
     private static final String UOM_ID = "2";
@@ -40,7 +38,6 @@ public class IngredientToIngredientCommandTest {
         //given
         Ingredient ingredient = new Ingredient();
         ingredient.setId(ID_VALUE);
-        ingredient.setRecipe(RECIPE);
         ingredient.setAmount(AMOUNT);
         ingredient.setDescription(DESCRIPTION);
 
@@ -64,7 +61,6 @@ public class IngredientToIngredientCommandTest {
         //given
         Ingredient ingredient = new Ingredient();
         ingredient.setId(ID_VALUE);
-        ingredient.setRecipe(RECIPE);
         ingredient.setAmount(AMOUNT);
         ingredient.setDescription(DESCRIPTION);
         ingredient.setUnitOfMeasure(null);

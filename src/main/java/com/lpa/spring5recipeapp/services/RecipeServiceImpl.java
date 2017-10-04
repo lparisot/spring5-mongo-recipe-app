@@ -38,11 +38,11 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
-    public Recipe findById(String l) {
-        Optional<Recipe> recipeOptional = recipeRepository.findById(l);
+    public Recipe findById(String id) {
+        Optional<Recipe> recipeOptional = recipeRepository.findById(id);
 
         if (!recipeOptional.isPresent()) {
-            throw new NotFoundException("Recipe " + l + " not found!");
+            throw new NotFoundException("Recipe " + id + " not found!");
         }
 
         return recipeOptional.get();
@@ -58,8 +58,17 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
-    public RecipeCommand findCommandById(String l) {
-        return recipeToRecipeCommand.convert(findById(l));
+    public RecipeCommand findCommandById(String id) {
+        RecipeCommand recipeCommand = recipeToRecipeCommand.convert(findById(id));
+
+        // enhance command object with id value
+        if(recipeCommand.getIngredients() != null && recipeCommand.getIngredients().size() > 0) {
+            recipeCommand.getIngredients().forEach(ic -> {
+                ic.setRecipeId(recipeCommand.getId());
+            });
+        }
+
+        return recipeCommand;
     }
 
     @Override
