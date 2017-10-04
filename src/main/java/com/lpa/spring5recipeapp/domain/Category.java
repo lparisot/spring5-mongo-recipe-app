@@ -1,10 +1,12 @@
 package com.lpa.spring5recipeapp.domain;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Set;
 
-@Data
+@Getter
+@Setter
 public class Category {
     private String id;
     private String description;

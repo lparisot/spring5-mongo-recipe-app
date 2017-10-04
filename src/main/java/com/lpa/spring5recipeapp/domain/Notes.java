@@ -1,8 +1,10 @@
 package com.lpa.spring5recipeapp.domain;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class Notes {
     private String id;
     private String recipeNotes;

@@ -4,6 +4,7 @@ import com.lpa.spring5recipeapp.commands.RecipeCommand;
 import com.lpa.spring5recipeapp.services.ImageService;
 import com.lpa.spring5recipeapp.services.RecipeService;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
@@ -104,6 +105,7 @@ public class ImageControllerTest {
         assertEquals(s.getBytes().length, responseBytes.length);
     }
 
+    @Ignore
     @Test
     public void testGetImageNumberFormatException() throws Exception {
 

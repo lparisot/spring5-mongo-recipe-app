@@ -1,12 +1,13 @@
 package com.lpa.spring5recipeapp.domain;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.HashSet;
 import java.util.Set;
 
-// add getters and setters, equals and hashcode
-@Data
+@Getter
+@Setter
 public class Recipe {
 
     private String id;
