@@ -3,7 +3,6 @@ package com.lpa.spring5recipeapp.repositories;
 import com.lpa.spring5recipeapp.bootstrap.RecipeBootstrap;
 import com.lpa.spring5recipeapp.domain.UnitOfMeasure;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
